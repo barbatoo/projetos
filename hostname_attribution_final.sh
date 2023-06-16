@@ -2,7 +2,7 @@
 
 ## Created by Gabriel Barbato - https://github.com/barbatoo
 ## this script defines the hostname of the Macbook based on the spreadsheet you want, relating the second column with the first
-## only working in Monterey and later, because in Ventura it only runs once, and then it shows an error to change LocalHostName, idk why
+## its necessary have a third column, even though it's blank
 
 # download spreadsheet
 curl -L 'https://docs.google.com/spreadsheets/d/ID_DA_PLANILHA/export?format=csv' -o /tmp/teste.csv
