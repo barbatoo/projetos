@@ -22,7 +22,7 @@ if ($Hostname -ne $null) {
     Rename-Computer -NewName $Hostname
 
     # Verifique se o novo hostname foi definido com sucesso
-    if ((Get-ComputerInfo).CsName -eq $Hostname) {
+    if ((Get-ComputerInfo).CsDNSHostName -eq $Hostname) {
         Write-Host "O hostname foi definido como $Hostname"
     }
     else {

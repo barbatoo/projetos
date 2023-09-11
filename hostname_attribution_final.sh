@@ -5,7 +5,7 @@
 ## its necessary have a third column, even though it's blank
 
 # download spreadsheet
-curl -L 'https://docs.google.com/spreadsheets/d/ID_DA_PLANILHA/export?format=csv' -o /tmp/teste.csv
+curl -L 'https://docs.google.com/spreadsheets/d/14WYPnicSFAXb-j2Wxm9o_0tbQlq-e6ld39ojWr_hy-M/export?format=csv' -o /tmp/teste.csv
 
 # spreadsheet
 output=$(cat /tmp/teste.csv)
@@ -18,35 +18,16 @@ HOSTNAME=$(echo "$output" | awk -F ',' -v col1="$SERIAL" '$1 == col1 {print $2}'
 # and defines if the hostname that was asked to be defined, matches the one defined
 if [ -n "$HOSTNAME" ]; then
     sudo scutil --set HostName $HOSTNAME
+
     sleep 0.5
-    if [ $(sudo scutil --get $1) == $HOSTNAME ]; then
-        if [ $success ]; then
-            success=true
-        fi
-    else
-        echo "Erro ao definir $1"
-        success=false
-    fi
+
     sudo scutil --set ComputerName $HOSTNAME
+
     sleep 0.5
-    if [ $(sudo scutil --get $1) == $HOSTNAME ]; then
-        if [ $success ]; then
-            success=true
-        fi
-    else
-        echo "Erro ao definir $1"
-        success=false
-    fi
+
     sudo scutil --set LocalHostName $HOSTNAME
+
     sleep 0.5
-    if [ $(sudo scutil --get $1) == $HOSTNAME ]; then
-        if [ $success ]; then
-            success=true
-        fi
-    else
-        echo "Erro ao definir $1"
-        success=false
-    fi
 
     echo "O Host Name foi definido!"
 
