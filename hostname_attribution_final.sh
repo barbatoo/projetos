@@ -5,7 +5,7 @@
 ## its necessary have a third column, even though it's blank
 
 # download spreadsheet
-curl -L 'https://docs.google.com/spreadsheets/d/14WYPnicSFAXb-j2Wxm9o_0tbQlq-e6ld39ojWr_hy-M/export?format=csv' -o /tmp/teste.csv
+curl -L 'https://docs.google.com/spreadsheets/d/ID_DA_PLANILHA/export?format=csv' -o /tmp/teste.csv
 
 # spreadsheet
 output=$(cat /tmp/teste.csv)
